@@ -331,5 +331,5 @@ TSWLatexianTemp*
 ### VisualStudioCode Patch ###
 
 ## Custome Files
-template_latex_apa/out/
-template_latex_ieee/out/
+out/
+!out/dokumentation.pdf

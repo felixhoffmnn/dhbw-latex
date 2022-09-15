@@ -1,0 +1,74 @@
+%% Einfügen eines Bildes
+% APA
+\begin{figure}[H]
+    \caption{Salivary cortisol concentrations during \ac{TSST} of paramedics and non-paramedic group} \label{fig:cortisol.concentraition}
+    \includegraphics[width=1\textwidth]{images/SPSS Diagramm Ausgabe.jpg}
+    \small\textit{Note}. This caption should be correctly formatted.
+\end{figure}
+
+% IEEE
+\begin{figure}[H]
+    \includegraphics[width=1\textwidth]{images/SPSS Diagramm Ausgabe.jpg}
+    \caption{Salivary cortisol concentrations during \ac{TSST} of paramedics and non-paramedic group} \label{fig:cortisol.concentraition}
+\end{figure} % Einfaches Bild
+
+\begin{figure}[H]
+    {\centering
+        \begin{subfigure}{0.45\textwidth}
+            \includegraphics[width=\textwidth]{latex/images/gpu_utilization_cifar10.png}
+            \caption{GPU Utilization}
+            \label{fig:gpuUtilization}
+        \end{subfigure}
+        \hfill
+        \begin{subfigure}{0.45\textwidth}
+            \includegraphics[width=\textwidth]{latex/images/gpu_free_memory_cifar10.png}
+            \caption{GPU Free Memory}
+            \label{fig:gpuFreeMemory}
+        \end{subfigure}
+    }
+    \caption{GPU metrics for \acs{CIFAR}-10 benchmark} \label{fig:cifar10Gpu}
+\end{figure} % Zwei Bilder nebeneinander
+
+%% Einfügen einer Tabelle
+\begin{table}[H]
+    \centering
+    {\footnotesize
+        \begin{tabularx}{\textwidth}{|l|p{0.1\textwidth}|p{0.15\textwidth}|p{0.15\textwidth}|X|}
+            \hline
+                       & Umsatz in Mrd. \$ & Marktkapitalisie-rung in Mrd. \$ & Ausgewählte Schlüsselzahlen &                                        \\
+            \hline
+            Facebook   & 56                & 582                              & 2.320                       & Monatlich aktive Nutzer in Mio. (2018) \\
+            \hline
+            Visa       & 21                & 360                              & 3.300                       & Anzahl Kreditkarten in Mio. (2018)     \\
+            \hline
+            Mastercard & 15                & 285                              & 74                          & Anzahl Transaktionen in Mrd. (2018)    \\
+            \hline
+            Paypal     & 15                & 142                              & 287                         & Aktive Konten in Mio. (2018)           \\
+            \hline
+            Booking    & 15                & 81                               & 760                         & Gebuchte Übernachtungen in Mio. (2018) \\
+            \hline
+            Uber       & 11                & 76                               & 91                          & Monatlich aktive Nutzer in Mio (2018)  \\
+            \hline
+            Vodafone   & 53                & 44                               & 536                         & Mobilfunkunden in Mio. (2018)          \\
+            \hline
+            eBay       & 11                & 35                               & 179                         & Aktive Käufer in Mio. (2018)           \\
+            \hline
+            Spotify    & 6                 & 28                               & 96                          & Abonnenten in Mio. (2018)              \\
+            \hline
+        \end{tabularx}
+    }
+    \caption{Partner der Diem Association und Ihr Marktwert \cite{libra.das.globale.finanzsystem}}
+    \label{tab:uebersicht_zusammensetzung}
+\end{table}
+
+%% Zitieren
+% APA
+\textcite[eg.][\psq]{} % \psq --> f. (folgende Seite)
+\parencite[eg.][\psqq]{} % \psqq --> ff. (die nächsten Seiten)
+
+% IEEE
+\cite[eg.][\psq]{} % \psq --> f. (folgende Seite)
+\textcite[eg.][\psqq]{} % \psqq --> ff. (die nächsten Seiten)
+
+% Anführungszeichen
+\enquote{Lorem ipsum.} --> Den Text einfach in die geschweiften Klammern einfügen

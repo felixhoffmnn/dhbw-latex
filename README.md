@@ -6,12 +6,7 @@
 
 ## Introduction
 
-This project includes multiple templates for LaTeX. Currently, the following templates are available:
-
-| Style | Description                    |
-| ----- | ------------------------------ |
-| APA   | A version using the APA style  |
-| IEEE  | A version using the IEEE style |
+This project includes a version of the DHBW template for LaTeX. You can use either `APA` or `IEEE` style.
 
 ## Contributors
 
