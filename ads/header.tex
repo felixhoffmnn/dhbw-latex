@@ -45,7 +45,7 @@
 \input{lang/\sprache} % Übersetzung einlesen
 
 % Einstellung der Sprache des Paketes Babel und der Verzeichnisüberschriften
-\iflang{de}{\usepackage[english, ngerman]{babel}}
+\iflang{de}{\usepackage[american, ngerman]{babel}}
 \iflang{en}{\usepackage[ngerman, american]{babel}}
 
 
@@ -70,7 +70,6 @@
 \usepackage[perpage, hang, multiple, stable]{footmisc} % Fussnoten
 \usepackage[printonlyused]{acronym} % falls gewünscht kann die Option footnote eingefügt werden, dann wird die Erklärung nicht inline sondern in einer Fußnote dargestellt
 \usepackage{listings}
-\usepackage{tabu}
 \usepackage{tabu}
 \usepackage{lscape}
 \usepackage{listings}
@@ -140,23 +139,44 @@
 
 % Literaturverweise (sowohl deutsch als auch englisch)
 \iflang{de}{%
+  % APA-Style
+  % \usepackage[
+  %   backend=biber,
+  %   autocite=inline,
+  %   style=apa,
+  %   dashed=false
+  % ]{biblatex}
+  % \setlength{\bibparsep}{\parskip}
+  % \DeclareLanguageMapping{ngerman}{ngerman-apa}
+
+  % IEEE-Style
   \usepackage[
-    backend=biber,
-    autocite=inline,
-    style=apa,
-    dashed=false
+    backend=biber,		% empfohlen. Falls biber Probleme macht: bibtex
+    bibwarn=true,
+    bibencoding=utf8,	% wenn .bib in utf8, sonst ascii
+    sortlocale=de_DE,
+    style=\zitierstil,
   ]{biblatex}
-  \setlength{\bibparsep}{\parskip}
-  \DeclareLanguageMapping{ngerman}{ngerman-apa}
 }
 \iflang{en}{%
+  % APA-Style
+  % \usepackage[
+  %   backend=biber,
+  %   autocite=inline,
+  %   style=apa,
+  %   dashed=false
+  % ]{biblatex}
+  % \setlength{\bibparsep}{\parskip}
+
+  % IEEE-Style
   \usepackage[
-    backend=biber,
-    autocite=inline,
-    style=apa,
-    dashed=false
+    backend=biber,		% empfohlen. Falls biber Probleme macht: bibtex
+    bibwarn=true,
+    bibencoding=utf8,	% wenn .bib in utf8, sonst ascii
+    sortlocale=en_US,
+    style=\zitierstil,
   ]{biblatex}
-  \setlength{\bibparsep}{\parskip}
+
   \DeclareLanguageMapping{american}{american-apa}
 }
 
@@ -191,17 +211,14 @@
 \usepackage{cleveref}
 \usepackage{pdfcomment}
 
-% Kapitelbeschriftung bei Bildern entfernen
-% \usepackage{chngcntr}
-% \counterwithout{figure}{chapter}
-% \counterwithout{table}{chapter}
-
+% APA-Style
 % Abstände für "Caption" von Bilder und Tabellen
-\DeclareCaptionLabelSeparator*{spaced}{\\[2ex]}
-\captionsetup[table]{labelfont=bf,textfont=it,format=plain,justification=justified,singlelinecheck=false,labelsep=spaced,skip=0pt}
-\captionsetup[figure]{labelfont=bf,textfont=it,format=plain,justification=justified,singlelinecheck=false,labelsep=spaced,skip=0pt}
-\setlength{\belowcaptionskip}{\parskip}
+% \DeclareCaptionLabelSeparator*{spaced}{\\[2ex]}
+% \captionsetup[table]{labelfont=bf,textfont=it,format=plain,justification=justified,singlelinecheck=false,labelsep=spaced,skip=0pt}
+% \captionsetup[figure]{labelfont=bf,textfont=it,format=plain,justification=justified,singlelinecheck=false,labelsep=spaced,skip=0pt}
+% \setlength{\belowcaptionskip}{\parskip}
 
+% Buchstaben für Anhang
 \def\appendix{%
   \def\@chapter[##1]##2{\ifnum \c@secnumdepth >\m@ne
       \if@mainmatter
