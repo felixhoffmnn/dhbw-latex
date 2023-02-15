@@ -1,0 +1,23 @@
+name: Generate and publish document
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-pdf:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set up Git repository
+        uses: actions/checkout@v3
+      - name: Compile LaTeX document
+        uses: xu-cheng/latex-action@v2
+        with:
+          root_file: dokumentation.tex
+          args: -pdf -synctex=1 -shell-escape -interaction=nonstopmode -output-directory=out/latex
+      - name: Upload PDF file
+        uses: actions/upload-artifact@v3
+        with:
+          name: NoSQL E-Book
+          path: out/latex/dokumentation.pdf
