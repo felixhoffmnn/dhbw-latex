@@ -1,10 +1,10 @@
-all: 
-	mkdir -p out
-	biber --output-directory out/ dokumentation
-	pdflatex -interaction=nonstopmode -output-directory=out/ dokumentation.tex
-debug:
-	mkdir -p out
-	biber --output-directory out/ dokumentation
-	pdflatex -output-directory=out/ dokumentation.tex
+.PHONY: clean build
+.DEFAULT_GOAL := build
+
 clean:
-	rm -r out
+	@echo "Cleaning up..."
+	latexmk -c -output-directory=out/latex
+
+build:
+	@echo "Building the document..."
+	latexmk -pdf -synctex=1 -shell-escape -interaction=nonstopmode -output-directory=out/latex dokumentation.tex
