@@ -1,10 +1,15 @@
 %!TEX root = ../dokumentation.tex
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                                   Header
 %
 % Nahezu alle Einstellungen koennen hier getaetigt werden
 %
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\RequirePackage[l2tabu, orthodox]{nag}	% weist in Commandozeile bzw. log auf veraltete LaTeX Syntax hin
+%%%%%%%%%%%%%%%%%%%%%%%%% Dokumenteneinstellungen  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\RequirePackage[l2tabu, orthodox]{nag}	% weist in Kommandozeile bzw. log auf veraltete LaTeX Syntax hin
 
 \documentclass[%
   pdftex,
@@ -27,7 +32,7 @@
   numbers=noenddot,
 ]{scrreprt}	% Koma-Script report-Klasse, fuer laengere Bachelorarbeiten alternativ auch: scrbook
 
-% Einstellungen laden
+%% Einstellungen laden
 \usepackage{xstring}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
@@ -47,10 +52,9 @@
 % Einstellung der Sprache des Paketes Babel und der Verzeichnisüberschriften
 \iflang{de}{\usepackage[american, ngerman]{babel}}
 \iflang{en}{\usepackage[ngerman, american]{babel}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-
-%%%%%%% Package Includes %%%%%%%
-
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Package Includes %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage[margin=\seitenrand,foot=1cm]{geometry}	% Seitenränder und Abstände
 \usepackage[activate]{microtype} %Zeilenumbruch und mehr
 \usepackage[onehalfspacing]{setspace}
@@ -85,31 +89,29 @@
 \newcommand{\cmark}{\ding{51}}%
 \newcommand{\xmark}{\ding{55}}%
 
-% Notizen. Einsatz mit \todo{Notiz} oder \todo[inline]{Notiz}. 
+%% Notizen. Einsatz mit \todo{Notiz} oder \todo[inline]{Notiz}.
 \usepackage[obeyFinal,backgroundcolor=yellow,linecolor=black]{todonotes}
 % Alle Notizen ausblenden mit der Option "final" in \documentclass[...] oder durch das auskommentieren folgender Zeile
 % \usepackage[disable]{todonotes}
 
-% Kommentarumgebung. Einsatz mit \comment{}. Alle Kommentare ausblenden mit dem Auskommentieren der folgenden und dem aktivieren der nächsten Zeile.
+%% Kommentarumgebung. Einsatz mit \comment{}. Alle Kommentare ausblenden mit dem Auskommentieren der folgenden und dem aktivieren der nächsten Zeile.
 \newcommand{\comment}[1]{\par {\bfseries \color{blue} #1 \par}} %Kommentar anzeigen
 % \newcommand{\comment}[1]{} %Kommentar ausblenden
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-
-%%%%%% Configuration %%%%%
-
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Configuration %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Anwenden der Einstellungen
-
 \usepackage[scaled=.95]{\schriftart}
 \renewcommand\familydefault{\sfdefault}
 \ladefarben{}
 
-% Titel, Autor und Datum
+%% Titel, Autor und Datum
 \title{\titel}
 \subtitle{\untertitel}
 \author{\autor}
 \date{\datum}
 
-% PDF Einstellungen
+%% PDF Einstellungen
 \usepackage[%
   pdftitle={\titel},
   pdfauthor={\autor},
@@ -120,7 +122,7 @@
   pdflang={\sprache}, 			% Sprache des Dokuments.
 ]{hyperref}
 
-% (Farb-)einstellungen für die Links im PDF
+%% (Farb-)einstellungen für die Links im PDF
 \hypersetup{%
   colorlinks=true, 		% Aktivieren von farbigen Links im Dokument
   linkcolor=LinkColor, 	% Farbe festlegen
@@ -131,15 +133,15 @@
   linktocpage=true, 		% Nicht der Text sondern die Seitenzahlen in Verzeichnissen klickbar
   bookmarksnumbered=true 	% Überschriftsnummerierung im PDF Inhalt anzeigen.
 }
-% Workaround um Fehler in Hyperref, muss hier stehen bleiben
+%% Workaround um Fehler in Hyperref, muss hier stehen bleiben
 \usepackage{bookmark} %nur ein latex-Durchlauf für die Aktualisierung von Verzeichnissen nötig
 
-% Schriftart in Captions etwas kleiner
+%% Schriftart in Captions etwas kleiner
 \addtokomafont{caption}{\small}
 
 % Literaturverweise (sowohl deutsch als auch englisch)
 \iflang{de}{%
-  % APA-Style
+  %% APA-Style
   % \usepackage[
   %   backend=biber,
   %   autocite=inline,
@@ -149,7 +151,7 @@
   % \setlength{\bibparsep}{\parskip}
   % \DeclareLanguageMapping{ngerman}{ngerman-apa}
 
-  % IEEE-Style
+  %% IEEE-Style
   \usepackage[
     backend=biber,		% empfohlen. Falls biber Probleme macht: bibtex
     bibwarn=true,
@@ -159,7 +161,7 @@
   ]{biblatex}
 }
 \iflang{en}{%
-  % APA-Style
+  %% APA-Style
   % \usepackage[
   %   backend=biber,
   %   autocite=inline,
@@ -168,7 +170,7 @@
   % ]{biblatex}
   % \setlength{\bibparsep}{\parskip}
 
-  % IEEE-Style
+  %% IEEE-Style
   \usepackage[
     backend=biber,		% empfohlen. Falls biber Probleme macht: bibtex
     bibwarn=true,
@@ -184,41 +186,41 @@
 
 % Glossar
 \usepackage[nonumberlist,toc]{glossaries}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%%%%%% Additional settings %%%%%%
-
-% Hurenkinder und Schusterjungen verhindern
-% http://projekte.dante.de/DanteFAQ/Silbentrennung
+%%%%%%%%%%%%%%%%%%%%%%%%%%%% Additional settings %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Hurenkinder und Schusterjungen verhindern
+%% http://projekte.dante.de/DanteFAQ/Silbentrennung
 \clubpenalty = 10000 % schließt Schusterjungen aus (Seitenumbruch nach der ersten Zeile eines neuen Absatzes)
 \widowpenalty = 10000 % schließt Hurenkinder aus (die letzte Zeile eines Absatzes steht auf einer neuen Seite)
 \displaywidowpenalty=10000
 
-% Bildpfad
+%% Bildpfad
 \graphicspath{{images/}}
 
-% Einige häufig verwendete Sprachen
+%% Einige häufig verwendete Sprachen
 \lstloadlanguages{PHP,Python,Java,C,C++,bash}
 \listingsettings{}
-% Umbennung des Listings
+
+%% Umbennung des Listings
 \renewcommand\lstlistingname{\langlistingname}
 \renewcommand\lstlistlistingname{\langlistlistingname}
 \def\lstlistingautorefname{\langlistingautorefname}
 
-% Abstände in Tabellen
+%% Abstände in Tabellen
 \setlength{\tabcolsep}{\spaltenabstand}
 \renewcommand{\arraystretch}{\zeilenabstand}
 \usepackage{subcaption}
 \usepackage{cleveref}
 \usepackage{pdfcomment}
 
-% APA-Style
-% Abstände für "Caption" von Bilder und Tabellen
+%% APA-Style - Abstände für "Caption" von Bilder und Tabellen
 % \DeclareCaptionLabelSeparator*{spaced}{\\[2ex]}
 % \captionsetup[table]{labelfont=bf,textfont=it,format=plain,justification=justified,singlelinecheck=false,labelsep=spaced,skip=0pt}
 % \captionsetup[figure]{labelfont=bf,textfont=it,format=plain,justification=justified,singlelinecheck=false,labelsep=spaced,skip=0pt}
 % \setlength{\belowcaptionskip}{\parskip}
 
-% Buchstaben für Anhang
+%% Buchstaben für Anhang
 \def\appendix{%
   \def\@chapter[##1]##2{\ifnum \c@secnumdepth >\m@ne
       \if@mainmatter
@@ -239,6 +241,7 @@
       \@afterheading
     \fi}%
   \setcounter{chapter}{0}%
-  \renewcommand{\thechapter}{\Alph{chapter}}%  
+  \renewcommand{\thechapter}{\Alph{chapter}}%
   \renewcommand{\chaptername}{\appendixname}}
 \makeatother
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
