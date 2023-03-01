@@ -118,22 +118,16 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Eigenes %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Hier können Ergänzungen zur Präambel vorgenommen werden (eigene Pakete, Einstellungen)
-\usepackage{tabularx}
-\usepackage{ltablex}
-\usepackage{multirow}
+\usepackage{tabularray}
 \usepackage{tikz}
 \usepackage{siunitx}
-\sisetup{
-  locale = US,
-  per-mode = symbol,
-  detect-all = true,
-}
 \usepackage{newfloat}
-\usepackage[outputdir=out/latex]{minted}
+\usepackage{minted}
 \usepackage[labelfont=bf]{caption}
-\usepackage{scrhack}
 \sisetup{
-	locale = US,
+	locale = DE,
+    group-separator={.},
 	per-mode = symbol,
 	detect-all = true,
 }
+\DeclareFloatingEnvironment[placement={H},listname=Quellcodeverzeichnis,name=Code]{code}
