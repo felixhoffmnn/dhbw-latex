@@ -4,6 +4,7 @@
 ### LaTeX ###
 ## Core latex/pdflatex auxiliary files:
 *.aux
+*.ist
 *.lof
 *.log
 *.lot
@@ -316,11 +317,8 @@ TSWLatexianTemp*
 
 ### VisualStudioCode ###
 .vscode/*
-!.vscode/settings.json
-!.vscode/tasks.json
-!.vscode/launch.json
+.vscode/settings.json
 !.vscode/extensions.json
-!.vscode/*.code-snippets
 
 # Local History for Visual Studio Code
 .history/
@@ -333,3 +331,4 @@ TSWLatexianTemp*
 ## Custome Files
 out/
 !out/dokumentation.pdf
+

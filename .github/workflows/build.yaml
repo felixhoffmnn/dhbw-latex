@@ -15,7 +15,7 @@ jobs:
         uses: xu-cheng/latex-action@v2
         with:
           root_file: dokumentation.tex
-          args: -pdf -synctex=1 -shell-escape -interaction=nonstopmode -output-directory=out/latex
+          args: -pdf -shell-escape -interaction=nonstopmode -output-directory=out/latex
       - name: Upload PDF file
         uses: actions/upload-artifact@v3
         with:
