@@ -1,6 +1,9 @@
 name: Generate and publish document
 
 on:
+  pull_request:
+    branches:
+      - main
   push:
     branches:
       - main
@@ -11,13 +14,15 @@ jobs:
     steps:
       - name: Set up Git repository
         uses: actions/checkout@v3
+
       - name: Compile LaTeX document
         uses: xu-cheng/latex-action@v2
         with:
           root_file: dokumentation.tex
-          args: -pdf -shell-escape -interaction=nonstopmode -output-directory=out/latex
+          args: -pdf -shell-escape -interaction=nonstopmode -output-directory=out
+
       - name: Upload PDF file
         uses: actions/upload-artifact@v3
         with:
           name: PDF
-          path: out/latex/dokumentation.pdf
+          path: out/dokumentation.pdf

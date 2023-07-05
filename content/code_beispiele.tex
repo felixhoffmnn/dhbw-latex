@@ -1,35 +1,35 @@
-%% Einfügen eines Bildes
-% APA
+%%% Einfügen eines Bildes
+%% APA
 \begin{figure}[H]
-    \caption{Salivary cortisol concentrations during \ac{TSST} of paramedics and non-paramedic group} \label{fig:cortisol.concentraition}
+    \caption{Salivary cortisol concentrations during \ac{TSST} of paramedics and non-paramedic group}\label{fig:cortisol.concentraition}
     \includegraphics[width=1\textwidth]{images/SPSS Diagramm Ausgabe.jpg}
     \small\textit{Note}. This caption should be correctly formatted.
 \end{figure}
 
-% IEEE
+%% IEEE
+% Einfaches Bild
 \begin{figure}[H]
     \includegraphics[width=1\textwidth]{images/SPSS Diagramm Ausgabe.jpg}
-    \caption{Salivary cortisol concentrations during \ac{TSST} of paramedics and non-paramedic group} \label{fig:cortisol.concentraition}
-\end{figure} % Einfaches Bild
+    \caption{Salivary cortisol concentrations during \ac{TSST} of paramedics and non-paramedic group}\label{fig:cortisol.concentraition}
+\end{figure}
 
+% Zwei Bilder nebeneinander
 \begin{figure}[H]
     {\centering
         \begin{subfigure}{0.45\textwidth}
             \includegraphics[width=\textwidth]{latex/images/gpu_utilization_cifar10.png}
-            \caption{GPU Utilization}
-            \label{fig:gpuUtilization}
+            \caption{GPU Utilization}\label{fig:gpuUtilization}
         \end{subfigure}
         \hfill
         \begin{subfigure}{0.45\textwidth}
             \includegraphics[width=\textwidth]{latex/images/gpu_free_memory_cifar10.png}
-            \caption{GPU Free Memory}
-            \label{fig:gpuFreeMemory}
+            \caption{GPU Free Memory}\label{fig:gpuFreeMemory}
         \end{subfigure}
     }
-    \caption{GPU metrics for \acs{CIFAR}-10 benchmark} \label{fig:cifar10Gpu}
-\end{figure} % Zwei Bilder nebeneinander
+    \caption{GPU metrics for \acs{CIFAR}-10 benchmark}\label{fig:cifar10Gpu}
+\end{figure}
 
-%% Einfügen einer Tabelle
+%%% Einfügen einer Tabelle
 \begin{table}[H]
     \centering
     {\footnotesize
@@ -61,14 +61,14 @@
     \label{tab:uebersicht_zusammensetzung}
 \end{table}
 
-%% Zitieren
-% APA
-\textcite[eg.][\psq]{} % \psq --> f. (folgende Seite)
+%%% Zitieren
+%% APA
 \parencite[eg.][\psqq]{} % \psqq --> ff. (die nächsten Seiten)
+\textcite[eg.][\psq]{} % \psq --> f. (folgende Seite)
 
-% IEEE
-\cite[eg.][\psq]{} % \psq --> f. (folgende Seite)
+%% IEEE
+\autocite[eg.][\psq]{} % \psq --> f. (folgende Seite)
 \textcite[eg.][\psqq]{} % \psqq --> ff. (die nächsten Seiten)
 
-% Anführungszeichen
+%%% Anführungszeichen
 \enquote{Lorem ipsum.} --> Den Text einfach in die geschweiften Klammern einfügen

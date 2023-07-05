@@ -1,54 +1,21 @@
 # DHBW Latex Template
 
-This project includes a version of the DHBW template for LaTeX. You can use either `APA` or `IEEE` style.
+This project includes a version of the DHBW template for LaTeX. You can use either `APA` or `IEEE` style (need to be
+configured inside the `ads/header.tex` file).
 
 ## Usage
 
-Within the root directory a `Makefile` is provided. You can use the following commands:
+> :bulb: This project requires a working LaTeX installation. I recommend using [TeX Live](https://www.tug.org/texlive/).
+> Additionally you need to install [just](https://github.com/casey/just) to run the build commands.
 
-- `make check-service` to check if docker or podman is installed and available
-- `make` or `make build` to build the document
-- `make clean` to clean the build directory
+Within the root directory a `Justfile` is provided. You can use the following commands:
 
-All the commands are using the `texlive` docker image Therefore, you dont need to install `texlive` on your machine, as
-the docker image includes all the necessary packages and tools.
+- `just` or `just help`: Show all available commands
+- `just build` or `just build`: Build the document
 
-## VSCode
-
-If you are using VSCode and `docker`, you can use the following settings inside your `.vscode/settings.json`:
-
-```json
-{
-  "editor.formatOnSave": true,
-  "latex-workshop.latex.autoBuild.run": "onSave",
-  "latex-workshop.latex.outDir": "out/latex",
-  "[tex]": {
-    "editor.defaultFormatter": "James-Yu.latex-workshop"
-  },
-  "[bibtex]": {
-    "editor.defaultFormatter": "James-Yu.latex-workshop"
-  },
-  "latex-workshop.latex.recipes": [
-    {
-      "name": "latexmk",
-      "tools": ["latexmk"]
-    }
-  ],
-  "latex-workshop.latex.tools": [
-    {
-      "name": "latexmk",
-      "command": "latexmk",
-      "args": ["-pdf", "-outdir=out/latex", "%DOC%"],
-      "env": {}
-    }
-  ],
-  "latex-workshop.docker.enabled": true,
-  "latex-workshop.docker.image.latex": "texlive/texlive:latest"
-}
-```
-
-This will automatically build your document on save and format it using the `latex-workshop` extension and the `texlive`
-docker image.
+If you are using Linux you can also benifit from the `just drawio` command. This command will convert all `.drawio`
+files to `.pdf` files. You will need to install the
+[Draw.io AppImage](https://github.com/jgraph/drawio-desktop/releases).
 
 ## Contributors
 
