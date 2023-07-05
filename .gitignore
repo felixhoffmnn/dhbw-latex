@@ -4,7 +4,6 @@
 ### LaTeX ###
 ## Core latex/pdflatex auxiliary files:
 *.aux
-*.ist
 *.lof
 *.log
 *.lot
@@ -16,6 +15,7 @@
 *.cb
 *.cb2
 .*.lb
+*.ist
 
 ## Intermediate documents:
 *.dvi
@@ -317,7 +317,7 @@ TSWLatexianTemp*
 
 ### VisualStudioCode ###
 .vscode/*
-.vscode/settings.json
+!.vscode/settings.json
 !.vscode/extensions.json
 
 # Local History for Visual Studio Code
@@ -326,9 +326,8 @@ TSWLatexianTemp*
 # Built Visual Studio Code Extensions
 *.vsix
 
-### VisualStudioCode Patch ###
-
 ## Custome Files
 out/
-!out/dokumentation.pdf
-
+**.drawio.pdf
+**.drawio.bkp
+**.drawio.dtmp

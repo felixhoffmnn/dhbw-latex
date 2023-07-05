@@ -1,0 +1,6 @@
+{
+  "editor.formatOnSave": true,
+  "ltex.language": "de-DE",
+  "latex-workshop.latex.autoBuild.run": "never",
+  "latex-workshop.view.outline.commands": ["section"]
+}

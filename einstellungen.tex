@@ -82,7 +82,8 @@
   \definecolor{ListingBackground}{HTML}{FCF7DE}
 }
 %% Mathematikpakete benutzen (Pakete aktivieren)
-% \usepackage{amsmath}
+\usepackage{sfmath}
+\usepackage{amsmath}
 % \usepackage{amssymb}
 
 %% Programmiersprachen Highlighting (Listings)
@@ -122,12 +123,19 @@
 \usepackage{tikz}
 \usepackage{siunitx}
 \usepackage{newfloat}
-\usepackage{minted}
+\usepackage{svg}
+\usepackage[outputdir=out]{minted}
 \usepackage[labelfont=bf]{caption}
 \sisetup{
-	locale = DE,
-    group-separator={.},
-	per-mode = symbol,
-	detect-all = true,
+  locale = DE,
+  binary-units = true,
+  group-separator = {.},
+  per-mode = symbol,
+  detect-all = true,
 }
-\DeclareFloatingEnvironment[placement={H},listname=Quellcodeverzeichnis,name=Code]{code}
+\UseTblrLibrary{siunitx}
+\providecommand*{\listingautorefname}{Listing}
+
+\DefTblrTemplate{caption-tag}{default}{\small\textbf{Table\hspace{0.25em}\thetable}}
+\DefTblrTemplate{caption-sep}{default}{\small:\enskip}
+\DefTblrTemplate{caption-text}{default}{\small\InsertTblrText{caption}}
